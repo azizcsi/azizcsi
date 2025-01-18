@@ -1,0 +1,14 @@
+# docker-compose.yml
+
+version: '3.8'
+
+services:
+  node-app:
+    build: ./app
+    ports:
+      - "3000:3000"
+    volumes:
+      - ./app:/usr/src/app
+    environment:
+      - NODE_ENV=development
+    restart: unless-stopped
